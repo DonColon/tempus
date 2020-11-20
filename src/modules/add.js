@@ -1,4 +1,3 @@
-
 export function addMilliseconds(value, milliseconds) {
     const timestamp = value.getTime();
     return new Date(timestamp + milliseconds);

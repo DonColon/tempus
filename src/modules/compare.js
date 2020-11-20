@@ -1,8 +1,6 @@
-
 import { addDays } from './add';
 import { subtractDays } from './subtract';
 import { differenceInQuarters, differenceInWeeks } from './difference';
-
 
 export function min(values) {
     return new Date(Math.min.apply(null, values));
@@ -12,7 +10,6 @@ export function max(values) {
     return new Date(Math.max.apply(null, values));
 }
 
-
 export function isEqual(value, other) {
     return value.getTime() === other.getTime();
 }
@@ -20,7 +17,7 @@ export function isEqual(value, other) {
 export function isSameSecond(value, other) {
     const valueSeconds = value.getSeconds();
     const otherSeconds = other.getSeconds();
-    
+
     return valueSeconds === otherSeconds;
 }
 
@@ -111,7 +108,6 @@ export function isCurrentQuarter(value) {
 export function isCurrentYear(value) {
     return isSameYear(value, new Date());
 }
-
 
 export function isBefore(value, other) {
     return value < other;

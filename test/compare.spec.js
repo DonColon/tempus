@@ -1,5 +1,5 @@
-
 import { expect } from 'chai';
+import { describe, it } from 'mocha';
 
 import {
     min,
@@ -16,22 +16,21 @@ import {
     isSameYear,
     isBefore,
     isAfter,
-    isBetween
+    isBetween,
 
 } from '../src/modules/compare';
-
 
 const dates = [
     // 1580394645000 ms
     new Date(2020, 0, 30, 15, 30, 45),
 
     // 1593091845000 ms
-    new Date(2020, 5, 25, 15, 30, 45)
+    new Date(2020, 5, 25, 15, 30, 45),
 ];
 
 const interval = {
     start: new Date(2020, 10, 1),
-    end: new Date(2020, 11, 1)
+    end: new Date(2020, 11, 1),
 };
 
 // 1605709845000 ms
@@ -41,9 +40,7 @@ const equalValue = new Date(2020, 10, 18, 15, 30, 45);
 // 1607265045000 ms
 const other = new Date(2019, 11, 6, 16, 35, 50);
 
-
 describe('compare functions', () => {
-
     describe('#min', () => {
         it('should be 1580394645000 ms', () => {
             const minDate = min(dates).getTime();
@@ -122,5 +119,4 @@ describe('compare functions', () => {
         it('should be true', () => expect(isBetween(value, interval)).to.be.true);
         it('should be false', () => expect(isBetween(other, interval)).to.be.false);
     });
-
 });

@@ -1,5 +1,5 @@
-
 import { expect } from 'chai';
+import { describe, it } from 'mocha';
 
 import {
     differenceInMilliseconds,
@@ -10,17 +10,14 @@ import {
     differenceInWeeks,
     differenceInMonths,
     differenceInQuarters,
-    differenceInYears
+    differenceInYears,
 
 } from '../src/modules/difference';
-
 
 const value = new Date(2020, 10, 18, 15, 30, 45, 60);
 const other = new Date(2018, 3, 18, 20, 15, 0, 0);
 
-
 describe('difference functions', () => {
-
     describe('#differenceInMilliseconds', () => {
         it('should return 81.634.545.060ms', () => {
             const difference = Math.round(differenceInMilliseconds(value, other));
@@ -83,6 +80,4 @@ describe('difference functions', () => {
             expect(difference).to.equal(2);
         });
     });
-
 });
-

@@ -1,6 +1,6 @@
-
-import { getQuarterOfYear } from './calendar';
-
+function getQuarterOfYear(value) {
+    return Math.floor(value.getMonth() / 3) + 1;
+}
 
 export function differenceInMilliseconds(value, other) {
     return Math.abs(value.getTime() - other.getTime());
@@ -31,6 +31,10 @@ export function differenceInWeeks(value, other) {
     return days / 7;
 }
 
+export function differenceInYears(value, other) {
+    return Math.abs(value.getFullYear() - other.getFullYear());
+}
+
 export function differenceInMonths(value, other) {
     const years = differenceInYears(value, other);
     const months = Math.abs(value.getMonth() - other.getMonth());
@@ -41,8 +45,4 @@ export function differenceInQuarters(value, other) {
     const years = differenceInYears(value, other);
     const quarters = Math.abs(getQuarterOfYear(value) - getQuarterOfYear(other));
     return years * 4 + quarters;
-}
-
-export function differenceInYears(value, other) {
-    return Math.abs(value.getFullYear() - other.getFullYear());
 }

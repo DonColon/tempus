@@ -1,5 +1,5 @@
-
 import { expect } from 'chai';
+import { describe, it } from 'mocha';
 
 import {
     getDayOfYear,
@@ -13,16 +13,13 @@ import {
     isThursday,
     isFriday,
     isSaturday,
-    isSunday
+    isSunday,
 
 } from '../src/modules/calendar';
 
-
 const value = new Date(2020, 10, 18);
 
-
 describe('calendar functions', () => {
-
     describe('#getDayOfYear', () => {
         it('should return 323', () => {
             const dayOfYear = getDayOfYear(value);
@@ -83,6 +80,4 @@ describe('calendar functions', () => {
     describe('#isSunday', () => {
         it('should be false', () => expect(isSunday(value)).to.be.false);
     });
-
 });
-

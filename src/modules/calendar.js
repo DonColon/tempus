@@ -1,9 +1,7 @@
-
 import { differenceInDays, differenceInWeeks } from './difference';
 
-
 export function getDayOfYear(value) {
-    const date = new Date(value.getFullYear(), 0, 1)
+    const date = new Date(value.getFullYear(), 0, 1);
     return Math.floor(differenceInDays(value, date)) + 1;
 }
 
@@ -16,7 +14,6 @@ export function getWeekOfYear(value) {
 export function getQuarterOfYear(value) {
     return Math.floor(value.getMonth() / 3) + 1;
 }
-
 
 export function isDate(value) {
     return value instanceof Date;

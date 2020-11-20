@@ -1,4 +1,3 @@
-
 export {
     addMilliseconds,
     addSeconds,
@@ -8,7 +7,7 @@ export {
     addWeeks,
     addMonths,
     addQuarters,
-    addYears
+    addYears,
 
 } from './modules/add';
 
@@ -21,7 +20,7 @@ export {
     subtractWeeks,
     subtractMonths,
     subtractQuarters,
-    subtractYears
+    subtractYears,
 
 } from './modules/subtract';
 
@@ -34,7 +33,7 @@ export {
     differenceInWeeks,
     differenceInMonths,
     differenceInQuarters,
-    differenceInYears
+    differenceInYears,
 
 } from './modules/difference';
 
@@ -66,7 +65,7 @@ export {
     isAfter,
     isFuture,
     isTomorrow,
-    isBetween
+    isBetween,
 
 } from './modules/compare';
 
@@ -82,6 +81,6 @@ export {
     isThursday,
     isFriday,
     isSaturday,
-    isSunday
+    isSunday,
 
 } from './modules/calendar';

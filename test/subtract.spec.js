@@ -1,5 +1,5 @@
-
 import { expect } from 'chai';
+import { describe, it } from 'mocha';
 import { getWeekOfYear, getQuarterOfYear } from '../src/modules/calendar';
 
 import {
@@ -11,23 +11,20 @@ import {
     subtractWeeks,
     subtractMonths,
     subtractQuarters,
-    subtractYears
+    subtractYears,
 
 } from '../src/modules/subtract';
-
 
 const value = new Date(2020, 10, 18, 15, 30, 45, 60);
 const lastDayOfMarch = new Date(2020, 2, 31, 15, 30, 45, 60);
 
-
 describe('subtract functions', () => {
-
     describe('#subtractMilliseconds', () => {
         it('should return 50ms', () => {
             const date = subtractMilliseconds(value, 10);
             const milliseconds = date.getMilliseconds();
             expect(milliseconds).to.equal(50);
-        })
+        });
     });
 
     describe('#subtractSeconds', () => {
@@ -81,7 +78,7 @@ describe('subtract functions', () => {
             const date = subtractMonths(lastDayOfMarch, 1);
             const month = date.getMonth() + 1;
             expect(month).to.equal(2);
-        })
+        });
     });
 
     describe('#subtractQuarters', () => {
@@ -99,5 +96,4 @@ describe('subtract functions', () => {
             expect(years).to.equal(2015);
         });
     });
-
 });

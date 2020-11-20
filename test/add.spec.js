@@ -1,5 +1,5 @@
-
 import { expect } from 'chai';
+import { describe, it } from 'mocha';
 import { getWeekOfYear, getQuarterOfYear } from '../src/modules/calendar';
 
 import {
@@ -11,22 +11,19 @@ import {
     addWeeks,
     addMonths,
     addQuarters,
-    addYears
+    addYears,
 
 } from '../src/modules/add';
 
-
 const value = new Date(2020, 10, 18, 15, 30, 45, 60);
 
-
 describe('add functions', () => {
-
     describe('#addMilliseconds', () => {
         it('should return 70ms', () => {
             const date = addMilliseconds(value, 10);
             const milliseconds = date.getMilliseconds();
             expect(milliseconds).to.equal(70);
-        })
+        });
     });
 
     describe('#addSeconds', () => {
@@ -92,5 +89,4 @@ describe('add functions', () => {
             expect(years).to.equal(2025);
         });
     });
-
 });

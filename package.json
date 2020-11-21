@@ -25,8 +25,13 @@
         "type": "git",
         "url": "git+https://github.com/DonColon/tempus.git"
     },
-    "main": "index.js",
-    "module": "index.es.js",
+    "files": [
+        "lib"
+    ],
+    "main": "lib/tempus.cjs.js",
+    "module": "lib/tempus.es.js",
+    "jsnext:module": "lib/tempus.es.js",
+    "browser": "lib/tempus.min.js",
     "babel": {
         "presets": [
             "@babel/preset-env"
@@ -36,10 +41,16 @@
         ]
     },
     "scripts": {
-        "lint": "eslint src",
-        "build": "gulp -f ./tools/gulp.js",
+        "lint": "eslint src test",
+        "lint:fix": "eslint src test --fix",
         "test": "mocha --require @babel/register",
-        "test:coverage": "nyc npm run test"
+        "test:coverage": "nyc npm run test",
+        "clean": "del lib",
+        "prebuild": "npm run clean",
+        "build": "rollup -c"
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.12.5"
     },
     "devDependencies": {
         "@babel/cli": "^7.12.1",
@@ -48,18 +59,17 @@
         "@babel/plugin-transform-runtime": "^7.12.1",
         "@babel/preset-env": "^7.12.1",
         "@babel/register": "^7.12.1",
-        "@babel/runtime": "^7.12.5",
         "@rollup/plugin-babel": "^5.2.1",
         "@rollup/plugin-commonjs": "^16.0.0",
         "@rollup/plugin-node-resolve": "^10.0.0",
         "chai": "^4.2.0",
-        "del": "^6.0.0",
+        "del-cli": "^3.0.1",
         "eslint": "^7.13.0",
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-plugin-import": "^2.22.1",
-        "gulp": "^4.0.2",
         "mocha": "^8.2.1",
         "nyc": "^15.1.0",
-        "rollup": "^2.33.2"
+        "rollup": "^2.33.2",
+        "rollup-plugin-terser": "^7.0.2"
     }
 }

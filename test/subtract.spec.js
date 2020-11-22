@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
-import { getWeekOfYear, getQuarterOfYear } from '../src/modules/calendar';
+
+import testData from './resources/subtract-data';
 
 import {
     subtractMilliseconds,
@@ -15,85 +16,114 @@ import {
 
 } from '../src/modules/subtract';
 
-const value = new Date(2020, 10, 18, 15, 30, 45, 60);
-const lastDayOfMarch = new Date(2020, 2, 31, 15, 30, 45, 60);
+import { getWeekOfYear, getQuarterOfYear } from '../src/modules/calendar';
 
 describe('subtract functions', () => {
     describe('#subtractMilliseconds', () => {
-        it('should return 50ms', () => {
-            const date = subtractMilliseconds(value, 10);
-            const milliseconds = date.getMilliseconds();
-            expect(milliseconds).to.equal(50);
+        testData.milliseconds.forEach((data) => {
+            const { date, value, expected } = data;
+
+            it(`should return ${expected}ms`, () => {
+                const newDate = subtractMilliseconds(date, value);
+                const milliseconds = newDate.getMilliseconds();
+                expect(milliseconds).to.equal(expected);
+            });
         });
     });
 
     describe('#subtractSeconds', () => {
-        it('should return 40s', () => {
-            const date = subtractSeconds(value, 5);
-            const seconds = date.getSeconds();
-            expect(seconds).to.equal(40);
+        testData.seconds.forEach((data) => {
+            const { date, value, expected } = data;
+
+            it(`should return ${expected}s`, () => {
+                const newDate = subtractSeconds(date, value);
+                const seconds = newDate.getSeconds();
+                expect(seconds).to.equal(expected);
+            });
         });
     });
 
     describe('#subtractMinutes', () => {
-        it('should return 25min', () => {
-            const date = subtractMinutes(value, 5);
-            const minutes = date.getMinutes();
-            expect(minutes).to.equal(25);
+        testData.minutes.forEach((data) => {
+            const { date, value, expected } = data;
+
+            it(`should return ${expected}min`, () => {
+                const newDate = subtractMinutes(date, value);
+                const minutes = newDate.getMinutes();
+                expect(minutes).to.equal(expected);
+            });
         });
     });
 
     describe('#subtractHours', () => {
-        it('should return 10h', () => {
-            const date = subtractHours(value, 5);
-            const hours = date.getHours();
-            expect(hours).to.equal(10);
+        testData.hours.forEach((data) => {
+            const { date, value, expected } = data;
+
+            it(`should return ${expected}h`, () => {
+                const newDate = subtractHours(date, value);
+                const hours = newDate.getHours();
+                expect(hours).to.equal(expected);
+            });
         });
     });
 
     describe('#subtractDays', () => {
-        it('should return 13d', () => {
-            const date = subtractDays(value, 5);
-            const day = date.getDate();
-            expect(day).to.equal(13);
+        testData.days.forEach((data) => {
+            const { date, value, expected } = data;
+
+            it(`should return ${expected}d`, () => {
+                const newDate = subtractDays(date, value);
+                const day = newDate.getDate();
+                expect(day).to.equal(expected);
+            });
         });
     });
 
     describe('#subtractWeeks', () => {
-        it('should return 42w', () => {
-            const date = subtractWeeks(value, 5);
-            const week = getWeekOfYear(date);
-            expect(week).to.equal(42);
+        testData.weeks.forEach((data) => {
+            const { date, value, expected } = data;
+
+            it(`should return ${expected}w`, () => {
+                const newDate = subtractWeeks(date, value);
+                const week = getWeekOfYear(newDate);
+                expect(week).to.equal(expected);
+            });
         });
     });
 
     describe('#subtractMonths', () => {
-        it('should return 6m', () => {
-            const date = subtractMonths(value, 5);
-            const month = date.getMonth() + 1;
-            expect(month).to.equal(6);
-        });
+        testData.months.forEach((data) => {
+            const { date, value, expected } = data;
 
-        it('should be February 28th', () => {
-            const date = subtractMonths(lastDayOfMarch, 1);
-            const month = date.getMonth() + 1;
-            expect(month).to.equal(2);
+            it(`should return ${expected}m`, () => {
+                const newDate = subtractMonths(date, value);
+                const month = newDate.getMonth() + 1;
+                expect(month).to.equal(expected);
+            });
         });
     });
 
     describe('#subtractQuarters', () => {
-        it('should return Q3', () => {
-            const date = subtractQuarters(value, 5);
-            const quarter = getQuarterOfYear(date);
-            expect(quarter).to.equal(3);
+        testData.quarters.forEach((data) => {
+            const { date, value, expected } = data;
+
+            it(`should return Q${expected}`, () => {
+                const newDate = subtractQuarters(date, value);
+                const quarter = getQuarterOfYear(newDate);
+                expect(quarter).to.equal(expected);
+            });
         });
     });
 
     describe('#subtractYears', () => {
-        it('should return 2015y', () => {
-            const date = subtractYears(value, 5);
-            const years = date.getFullYear();
-            expect(years).to.equal(2015);
+        testData.years.forEach((data) => {
+            const { date, value, expected } = data;
+
+            it(`should return ${expected}y`, () => {
+                const newDate = subtractYears(date, value);
+                const years = newDate.getFullYear();
+                expect(years).to.equal(expected);
+            });
         });
     });
 });

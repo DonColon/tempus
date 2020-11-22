@@ -1,6 +1,8 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
 
+import testData from './resources/difference-data';
+
 import {
     differenceInMilliseconds,
     differenceInSeconds,
@@ -14,70 +16,103 @@ import {
 
 } from '../src/modules/difference';
 
-const value = new Date(2020, 10, 18, 15, 30, 45, 60);
-const other = new Date(2018, 3, 18, 20, 15, 0, 0);
-
 describe('difference functions', () => {
     describe('#differenceInMilliseconds', () => {
-        it('should return 81.634.545.060ms', () => {
-            const difference = Math.round(differenceInMilliseconds(value, other));
-            expect(difference).to.equal(81634545060);
+        testData.milliseconds.forEach((data) => {
+            const { value, other, expected } = data;
+
+            it(`should return ${expected}ms`, () => {
+                const difference = Math.round(differenceInMilliseconds(value, other));
+                expect(difference).to.equal(expected);
+            });
         });
     });
 
     describe('#differenceInSeconds', () => {
-        it('should return 81.648.000s', () => {
-            const difference = Math.round(differenceInSeconds(value, other));
-            expect(difference).to.equal(81634545);
+        testData.seconds.forEach((data) => {
+            const { value, other, expected } = data;
+
+            it(`should return ${expected}ms`, () => {
+                const difference = Math.round(differenceInSeconds(value, other));
+                expect(difference).to.equal(expected);
+            });
         });
     });
 
     describe('#differenceInMinutes', () => {
-        it('should return 1.360.800min', () => {
-            const difference = Math.round(differenceInMinutes(value, other));
-            expect(difference).to.equal(1360576);
+        testData.minutes.forEach((data) => {
+            const { value, other, expected } = data;
+
+            it(`should return ${expected}ms`, () => {
+                const difference = Math.round(differenceInMinutes(value, other));
+                expect(difference).to.equal(expected);
+            });
         });
     });
 
     describe('#differenceInHours', () => {
-        it('should return 22.680h', () => {
-            const difference = Math.round(differenceInHours(value, other));
-            expect(difference).to.equal(22676);
+        testData.hours.forEach((data) => {
+            const { value, other, expected } = data;
+
+            it(`should return ${expected}ms`, () => {
+                const difference = Math.round(differenceInHours(value, other));
+                expect(difference).to.equal(expected);
+            });
         });
     });
 
     describe('#differenceInDays', () => {
-        it('should return 945d', () => {
-            const difference = Math.round(differenceInDays(value, other));
-            expect(difference).to.equal(945);
+        testData.days.forEach((data) => {
+            const { value, other, expected } = data;
+
+            it(`should return ${expected}ms`, () => {
+                const difference = Math.round(differenceInDays(value, other));
+                expect(difference).to.equal(expected);
+            });
         });
     });
 
     describe('#differenceInWeeks', () => {
-        it('should return 135w', () => {
-            const difference = Math.round(differenceInWeeks(value, other));
-            expect(difference).to.equal(135);
+        testData.weeks.forEach((data) => {
+            const { value, other, expected } = data;
+
+            it(`should return ${expected}ms`, () => {
+                const difference = Math.round(differenceInWeeks(value, other));
+                expect(difference).to.equal(expected);
+            });
         });
     });
 
     describe('#differenceInMonths', () => {
-        it('should return 31m', () => {
-            const difference = Math.round(differenceInMonths(value, other));
-            expect(difference).to.equal(31);
+        testData.months.forEach((data) => {
+            const { value, other, expected } = data;
+
+            it(`should return ${expected}ms`, () => {
+                const difference = Math.round(differenceInMonths(value, other));
+                expect(difference).to.equal(expected);
+            });
         });
     });
 
     describe('#differenceInQuarters', () => {
-        it('should return 10q', () => {
-            const difference = Math.round(differenceInQuarters(value, other));
-            expect(difference).to.equal(10);
+        testData.quarters.forEach((data) => {
+            const { value, other, expected } = data;
+
+            it(`should return ${expected}ms`, () => {
+                const difference = Math.round(differenceInQuarters(value, other));
+                expect(difference).to.equal(expected);
+            });
         });
     });
 
     describe('#differenceInYears', () => {
-        it('should return 2y', () => {
-            const difference = differenceInYears(value, other);
-            expect(difference).to.equal(2);
+        testData.years.forEach((data) => {
+            const { value, other, expected } = data;
+
+            it(`should return ${expected}ms`, () => {
+                const difference = Math.round(differenceInYears(value, other));
+                expect(difference).to.equal(expected);
+            });
         });
     });
 });

@@ -1,6 +1,8 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
 
+import testData from './resources/calendar-data';
+
 import {
     getDayOfYear,
     getWeekOfYear,
@@ -17,67 +19,100 @@ import {
 
 } from '../src/modules/calendar';
 
-const value = new Date(2020, 10, 18);
-
 describe('calendar functions', () => {
     describe('#getDayOfYear', () => {
-        it('should return 323', () => {
-            const dayOfYear = getDayOfYear(value);
-            expect(dayOfYear).to.equal(323);
+        testData.dayOfYear.forEach((data) => {
+            const { value, expected } = data;
+
+            it(`should return ${expected}`, () => {
+                const dayOfYear = getDayOfYear(value);
+                expect(dayOfYear).to.equal(expected);
+            });
         });
     });
 
     describe('#getWeekOfYear', () => {
-        it('should return 47', () => {
-            const weekOfYear = getWeekOfYear(value);
-            expect(weekOfYear).to.equal(47);
+        testData.weekOfYear.forEach((data) => {
+            const { value, expected } = data;
+
+            it(`should return ${expected}`, () => {
+                const weekOfYear = getWeekOfYear(value);
+                expect(weekOfYear).to.equal(expected);
+            });
         });
     });
 
     describe('#getQuarterOfYear', () => {
-        it('should return 4', () => {
-            const quarterOfYear = getQuarterOfYear(value);
-            expect(quarterOfYear).to.equal(4);
+        testData.quarterOfYear.forEach((data) => {
+            const { value, expected } = data;
+
+            it(`should return ${expected}`, () => {
+                const quarterOfYear = getQuarterOfYear(value);
+                expect(quarterOfYear).to.equal(expected);
+            });
         });
     });
 
     describe('#isDate', () => {
-        it('should be true', () => expect(isDate(value)).to.be.true);
+        testData.dates.forEach((data) => {
+            const { value, expected } = data;
+            it(`should be ${expected}`, () => expect(isDate(value)).to.be[expected]);
+        });
     });
 
     describe('#isLeapYear', () => {
-        it('should be true', () => expect(isLeapYear(value)).to.be.true);
-    });
-
-    describe('#isLeapYear', () => {
-        it('should be true', () => expect(isLeapYear(value)).to.be.true);
+        testData.leapYears.forEach((data) => {
+            const { value, expected } = data;
+            it(`should be ${expected}`, () => expect(isLeapYear(value)).to.be[expected]);
+        });
     });
 
     describe('#isMonday', () => {
-        it('should be false', () => expect(isMonday(value)).to.be.false);
+        testData.mondays.forEach((data) => {
+            const { value, expected } = data;
+            it(`should be ${expected}`, () => expect(isMonday(value)).to.be[expected]);
+        });
     });
 
     describe('#isTuesday', () => {
-        it('should be false', () => expect(isTuesday(value)).to.be.false);
+        testData.tuesdays.forEach((data) => {
+            const { value, expected } = data;
+            it(`should be ${expected}`, () => expect(isTuesday(value)).to.be[expected]);
+        });
     });
 
     describe('#isWednesday', () => {
-        it('should be true', () => expect(isWednesday(value)).to.be.true);
+        testData.wednesdays.forEach((data) => {
+            const { value, expected } = data;
+            it(`should be ${expected}`, () => expect(isWednesday(value)).to.be[expected]);
+        });
     });
 
     describe('#isThursday', () => {
-        it('should be false', () => expect(isThursday(value)).to.be.false);
+        testData.thursdays.forEach((data) => {
+            const { value, expected } = data;
+            it(`should be ${expected}`, () => expect(isThursday(value)).to.be[expected]);
+        });
     });
 
     describe('#isFriday', () => {
-        it('should be false', () => expect(isFriday(value)).to.be.false);
+        testData.fridays.forEach((data) => {
+            const { value, expected } = data;
+            it(`should be ${expected}`, () => expect(isFriday(value)).to.be[expected]);
+        });
     });
 
     describe('#isSaturday', () => {
-        it('should be false', () => expect(isSaturday(value)).to.be.false);
+        testData.saturdays.forEach((data) => {
+            const { value, expected } = data;
+            it(`should be ${expected}`, () => expect(isSaturday(value)).to.be[expected]);
+        });
     });
 
     describe('#isSunday', () => {
-        it('should be false', () => expect(isSunday(value)).to.be.false);
+        testData.sundays.forEach((data) => {
+            const { value, expected } = data;
+            it(`should be ${expected}`, () => expect(isSunday(value)).to.be[expected]);
+        });
     });
 });

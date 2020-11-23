@@ -55,25 +55,6 @@ const quarterOfYear = [
     },
 ];
 
-const dates = [
-    {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
-        expected: true,
-    },
-    {
-        value: new Date(2018, 6, 12, 20, 15, 36, 27),
-        expected: true,
-    },
-    {
-        value: 81634545060,
-        expected: false,
-    },
-    {
-        value: {},
-        expected: false,
-    },
-];
-
 const leapYears = [
     {
         value: new Date(2020, 10, 18, 15, 30, 45, 60),
@@ -227,5 +208,5 @@ const sundays = [
 ];
 
 export default {
-    dayOfYear, weekOfYear, quarterOfYear, dates, leapYears, mondays, tuesdays, wednesdays, thursdays, fridays, saturdays, sundays,
+    dayOfYear, weekOfYear, quarterOfYear, leapYears, mondays, tuesdays, wednesdays, thursdays, fridays, saturdays, sundays,
 };

@@ -73,7 +73,6 @@ export {
     getDayOfYear,
     getWeekOfYear,
     getQuarterOfYear,
-    isDate,
     isLeapYear,
     isMonday,
     isTuesday,
@@ -84,3 +83,9 @@ export {
     isSunday,
 
 } from './modules/calendar';
+
+export {
+    isDate,
+    toDate,
+
+} from './modules/basic';

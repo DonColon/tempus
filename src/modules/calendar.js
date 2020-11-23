@@ -15,10 +15,6 @@ export function getQuarterOfYear(value) {
     return Math.floor(value.getMonth() / 3) + 1;
 }
 
-export function isDate(value) {
-    return value instanceof Date;
-}
-
 export function isLeapYear(value) {
     const year = value.getFullYear();
     return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);

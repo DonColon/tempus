@@ -7,7 +7,6 @@ import {
     getDayOfYear,
     getWeekOfYear,
     getQuarterOfYear,
-    isDate,
     isLeapYear,
     isMonday,
     isTuesday,
@@ -50,13 +49,6 @@ describe('calendar functions', () => {
                 const quarterOfYear = getQuarterOfYear(value);
                 expect(quarterOfYear).to.equal(expected);
             });
-        });
-    });
-
-    describe('#isDate', () => {
-        testData.dates.forEach((data) => {
-            const { value, expected } = data;
-            it(`should be ${expected}`, () => expect(isDate(value)).to.be[expected]);
         });
     });
 

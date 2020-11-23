@@ -5,7 +5,7 @@ const milliseconds = [
         expected: 65,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 10,
         expected: 70,
     },
@@ -15,7 +15,7 @@ const milliseconds = [
         expected: 35,
     },
     {
-        date: new Date(2020, 11, 6, 12, 28, 43, 20),
+        date: 1607254123020,
         value: 20,
         expected: 40,
     },
@@ -28,7 +28,7 @@ const seconds = [
         expected: 50,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 10,
         expected: 55,
     },
@@ -51,7 +51,7 @@ const minutes = [
         expected: 35,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 10,
         expected: 40,
     },
@@ -74,7 +74,7 @@ const hours = [
         expected: 20,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 10,
         expected: 1,
     },
@@ -97,7 +97,7 @@ const days = [
         expected: 23,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 10,
         expected: 28,
     },
@@ -120,7 +120,7 @@ const weeks = [
         expected: 48,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 2,
         expected: 49,
     },
@@ -143,7 +143,7 @@ const months = [
         expected: 12,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 2,
         expected: 1,
     },
@@ -166,7 +166,7 @@ const quarters = [
         expected: 1,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 10,
         expected: 2,
     },
@@ -189,7 +189,7 @@ const years = [
         expected: 2025,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 10,
         expected: 2030,
     },

@@ -31,7 +31,7 @@ const minutes = [
         expected: 1360576,
     },
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         other: new Date(2018, 6, 12, 20, 15, 36, 27),
         expected: 1238175,
     },
@@ -44,7 +44,7 @@ const hours = [
         expected: 22676,
     },
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         other: new Date(2018, 6, 12, 20, 15, 36, 27),
         expected: 20636,
     },
@@ -65,7 +65,7 @@ const days = [
 
 const weeks = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         other: new Date(2018, 3, 18, 20, 15, 0, 0),
         expected: 135,
     },
@@ -91,7 +91,7 @@ const months = [
 
 const quarters = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         other: new Date(2018, 3, 18, 20, 15, 0, 0),
         expected: 10,
     },
@@ -109,7 +109,7 @@ const years = [
         expected: 2,
     },
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         other: new Date(2018, 6, 12, 20, 15, 36, 27),
         expected: 2,
     },

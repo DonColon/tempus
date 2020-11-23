@@ -20,12 +20,12 @@ const maximums = [
 
 const equals = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45),
-        other: new Date(2020, 10, 18, 15, 30, 45),
+        value: 1605709845000,
+        other: 1605709845000,
         expected: true,
     },
     {
-        value: new Date(2020, 10, 18, 15, 30, 45),
+        value: 1605709845000,
         other: new Date(2019, 11, 6, 16, 35, 50),
         expected: false,
     },
@@ -33,7 +33,7 @@ const equals = [
 
 const before = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45),
+        value: 1605709845000,
         other: new Date(2020, 10, 18, 15, 30, 45),
         expected: false,
     },
@@ -47,7 +47,7 @@ const before = [
 const after = [
     {
         value: new Date(2020, 10, 18, 15, 30, 45),
-        other: new Date(2020, 10, 18, 15, 30, 45),
+        other: 1605709845000,
         expected: false,
     },
     {
@@ -59,7 +59,7 @@ const after = [
 
 const between = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45),
+        value: 1605709845000,
         interval: {
             start: new Date(2020, 10, 1),
             end: new Date(2020, 11, 1),

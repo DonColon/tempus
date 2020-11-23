@@ -1,6 +1,6 @@
 const dayOfYear = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         expected: 323,
     },
     {
@@ -19,7 +19,7 @@ const dayOfYear = [
 
 const weekOfYear = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         expected: 47,
     },
     {
@@ -38,7 +38,7 @@ const weekOfYear = [
 
 const quarterOfYear = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         expected: 4,
     },
     {
@@ -57,7 +57,7 @@ const quarterOfYear = [
 
 const leapYears = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         expected: true,
     },
     {
@@ -76,7 +76,7 @@ const leapYears = [
 
 const mondays = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         expected: false,
     },
     {
@@ -95,7 +95,7 @@ const mondays = [
 
 const tuesdays = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         expected: false,
     },
     {
@@ -114,7 +114,7 @@ const tuesdays = [
 
 const wednesdays = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         expected: true,
     },
     {
@@ -133,7 +133,7 @@ const wednesdays = [
 
 const thursdays = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         expected: false,
     },
     {
@@ -152,7 +152,7 @@ const thursdays = [
 
 const fridays = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         expected: false,
     },
     {
@@ -171,7 +171,7 @@ const fridays = [
 
 const saturdays = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         expected: false,
     },
     {
@@ -190,7 +190,7 @@ const saturdays = [
 
 const sundays = [
     {
-        value: new Date(2020, 10, 18, 15, 30, 45, 60),
+        value: 1605709845060,
         expected: false,
     },
     {

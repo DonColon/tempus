@@ -1,9 +1,15 @@
+import { toDate } from './basic';
+
 function getQuarterOfYear(value) {
-    return Math.floor(value.getMonth() / 3) + 1;
+    const date = toDate(value);
+    return Math.floor(date.getMonth() / 3) + 1;
 }
 
 export function differenceInMilliseconds(value, other) {
-    return Math.abs(value.getTime() - other.getTime());
+    const valueDate = toDate(value);
+    const otherDate = toDate(other);
+
+    return Math.abs(valueDate.getTime() - otherDate.getTime());
 }
 
 export function differenceInSeconds(value, other) {
@@ -32,17 +38,26 @@ export function differenceInWeeks(value, other) {
 }
 
 export function differenceInYears(value, other) {
-    return Math.abs(value.getFullYear() - other.getFullYear());
+    const valueDate = toDate(value);
+    const otherDate = toDate(other);
+
+    return Math.abs(valueDate.getFullYear() - otherDate.getFullYear());
 }
 
 export function differenceInMonths(value, other) {
-    const years = differenceInYears(value, other);
-    const months = Math.abs(value.getMonth() - other.getMonth());
+    const valueDate = toDate(value);
+    const otherDate = toDate(other);
+
+    const years = differenceInYears(valueDate, otherDate);
+    const months = Math.abs(valueDate.getMonth() - otherDate.getMonth());
     return years * 12 + months;
 }
 
 export function differenceInQuarters(value, other) {
-    const years = differenceInYears(value, other);
-    const quarters = Math.abs(getQuarterOfYear(value) - getQuarterOfYear(other));
+    const valueDate = toDate(value);
+    const otherDate = toDate(other);
+
+    const years = differenceInYears(valueDate, otherDate);
+    const quarters = Math.abs(getQuarterOfYear(valueDate) - getQuarterOfYear(otherDate));
     return years * 4 + quarters;
 }

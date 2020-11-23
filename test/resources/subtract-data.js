@@ -5,7 +5,7 @@ const milliseconds = [
         expected: 55,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 10,
         expected: 50,
     },
@@ -23,7 +23,7 @@ const milliseconds = [
 
 const seconds = [
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 5,
         expected: 40,
     },
@@ -46,7 +46,7 @@ const seconds = [
 
 const minutes = [
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 5,
         expected: 25,
     },
@@ -92,7 +92,7 @@ const hours = [
 
 const days = [
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 5,
         expected: 13,
     },
@@ -120,7 +120,7 @@ const weeks = [
         expected: 46,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 2,
         expected: 45,
     },
@@ -161,7 +161,7 @@ const months = [
 
 const quarters = [
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 5,
         expected: 3,
     },
@@ -189,7 +189,7 @@ const years = [
         expected: 2015,
     },
     {
-        date: new Date(2020, 10, 18, 15, 30, 45, 60),
+        date: 1605709845060,
         value: 10,
         expected: 2010,
     },

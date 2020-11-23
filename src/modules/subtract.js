@@ -1,3 +1,5 @@
+import { toDate } from './basic';
+
 import {
     addMilliseconds,
     addSeconds,
@@ -34,14 +36,16 @@ export function subtractWeeks(value, weeks) {
 }
 
 export function subtractMonths(value, months) {
-    const date = new Date(value.getTime());
+    const date = toDate(value);
 
-    date.setMonth(date.getMonth() - months);
-    while (date.getMonth() === value.getMonth()) {
-        date.setDate(date.getDate() - 1);
+    const newDate = new Date(date.getTime());
+    newDate.setMonth(newDate.getMonth() - months);
+
+    while (newDate.getMonth() === date.getMonth()) {
+        newDate.setDate(newDate.getDate() - 1);
     }
 
-    return date;
+    return newDate;
 }
 
 export function subtractQuarters(value, quarters) {

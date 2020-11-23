@@ -1,5 +1,8 @@
+import { toDate } from './basic';
+
 export function addMilliseconds(value, milliseconds) {
-    const timestamp = value.getTime();
+    const date = toDate(value);
+    const timestamp = date.getTime();
     return new Date(timestamp + milliseconds);
 }
 
@@ -19,10 +22,12 @@ export function addHours(value, hours) {
 }
 
 export function addDays(value, days) {
-    const date = new Date(value.getTime());
-    date.setDate(date.getDate() + days);
+    const date = toDate(value);
 
-    return date;
+    const newDate = new Date(date.getTime());
+    newDate.setDate(newDate.getDate() + days);
+
+    return newDate;
 }
 
 export function addWeeks(value, weeks) {
@@ -31,10 +36,12 @@ export function addWeeks(value, weeks) {
 }
 
 export function addMonths(value, months) {
-    const date = new Date(value.getTime());
-    date.setMonth(date.getMonth() + months);
+    const date = toDate(value);
 
-    return date;
+    const newDate = new Date(date.getTime());
+    newDate.setMonth(newDate.getMonth() + months);
+
+    return newDate;
 }
 
 export function addQuarters(value, quarters) {
@@ -43,8 +50,10 @@ export function addQuarters(value, quarters) {
 }
 
 export function addYears(value, years) {
-    const date = new Date(value.getTime());
-    date.setFullYear(date.getFullYear() + years);
+    const date = toDate(value);
 
-    return date;
+    const newDate = new Date(date.getTime());
+    newDate.setFullYear(newDate.getFullYear() + years);
+
+    return newDate;
 }

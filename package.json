@@ -45,6 +45,7 @@
         "lint:fix": "eslint src test --fix",
         "test": "mocha --require @babel/register",
         "test:coverage": "nyc npm run test",
+        "docs": "documentation build src -f md -o docs/documentation.md --sort-order 'alpha'",
         "clean": "del lib",
         "prebuild": "npm run clean",
         "build": "rollup -c"
